@@ -25,7 +25,7 @@ const maxErrLength   = 90
 const latKS          = 51.2878
 const lonKS          = 9.4706
   var imgList = [ ["", ""] ];
-
+  var lastImg
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // DEBUG-CONFIG - DON'T TOUCH THIS
@@ -115,6 +115,11 @@ async function createWidget(items) {
   // fill list with img-links
   getImgURL(webPage);
 
+  // get info from last shown img
+  //await fm.remove(path) // to check behavior after installation
+  lastImg = JSON.parse(await fm.readString(path))
+  
+
   // get URL of last available image within daylight
   if (onlyDaylightPics == true) {
     // check if there's a daylight img available
@@ -122,17 +127,36 @@ async function createWidget(items) {
       picDate = new Date(imgList[i][0])
       if ( (picDate > riseDate          && picDate < sunsetDate         ) ||
            (picDate > riseDateYesterday && picDate < sunsetDateYesterday)  ) {
-        img = await loadWebImage(imgList[i][1])
+        // found pic-info in list
+        if (lastImg != null) {
+          // image from cache
+          if (imgList[i][1] == lastImg.url) {
+            img = await loadWebImage("")  // image from cache
+          }
+          // image from web as cached image is outdated
+          else {
+            img = await loadWebImage(imgList[i][1])
+            lastImg.timeStr = picDate.toJSON()
+            lastImg.url = imgList[i][1]
+            await fm.writeString(path, JSON.stringify(lasting))
+          }
+        } 
+        // image from web as there's no last image (might be after 1st run)
+        else {
+          img = await loadWebImage(imgList[i][1])
+          lastImg = JSON.parse ('{ "widget":"KSHerkulesWebCam" }')  // initial creation of file structure
+          lastImg.timeStr = picDate.toJSON()
+          lastImg.url = imgList[i][1]
+          await fm.writeString(path, JSON.stringify(lastImg))
+        }
         timeStr = dfTime.string(picDate)
-        await fm.writeString(path, imgList[i][0])
         break;
       }
     }
     // no img found, get the local file (last valid img)
     if (i == imgList.length) {
       img = await loadWebImage("")
-      timeStr = await fm.readString(path)  
-      timeStr = dfTime.string(new Date(timeStr))    
+      timeStr = dfTime.string(new Date(lastImg.timeStr))    
     }
   } 
   // get the latest img
@@ -182,8 +206,8 @@ async function loadWebImage(imgUrl) {
   let dir = fm.documentsDirectory()
   let path = fm.joinPath(dir, lastImgFile)
   
-  // url not valid, get the image from file
-  if (imgUrl.length < 5 ) {
+  // url not valid or already downloaded –> get the image from file
+  if ( imgUrl.length < 5 ) {
     if (fm.fileExists(path)) { 
       img = await fm.readImage(path)
     }
