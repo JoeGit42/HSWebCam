@@ -4,7 +4,7 @@ https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkules-100
 
 
 ### Features
-- Bilder vor Sonnenaufgang und nach Sonnuntergang werden nicht angezeigt, da die nicht gut aussehen
+- Bilder vor Sonnenaufgang und nach Sonnuntergang ("zivile Dämmerung") werden nicht angezeigt, da die nicht gut aussehen
 - Ein Klick auf das Widget führt zur Webseite der WebCam
 
 ![](KSHerkulesWebCamSmall.jpg) 
@@ -18,7 +18,7 @@ Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die 
 
 
 ### Known Bugs
-
+- Bewusste Abweichung: Die herangezogene "zivile Dämmerung" entspricht nicht den Sonnenuntergangs- und Sonnenaufgangszeiten, die in der Wetter-App vom iPhone angezeigt werden. 
 
 ### ChangeLog
 - 2020-12-26 initial version
