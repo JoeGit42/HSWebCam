@@ -14,7 +14,7 @@ https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkules-100
 Das Widget benötigt keine Konfiguration
 
 ### Tipps
-Sollen die (hässlichen) Nachtbilder auch angezeigt werden so kann im Code die Variable onlyDaylightPics = false gesetzt werden.
+Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die Variable onlyDaylightPics = false gesetzt werden.
 
 
 ### Known Bugs
