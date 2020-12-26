@@ -22,3 +22,4 @@ Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die 
 
 ### ChangeLog
 - 2020-12-26 initial version
+- 2020-12-26 ADD: optimized caching  of image
