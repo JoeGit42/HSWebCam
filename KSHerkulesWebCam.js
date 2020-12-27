@@ -138,7 +138,7 @@ async function createWidget(items) {
             img = await loadWebImage(imgList[i][1])
             lastImg.timeStr = picDate.toJSON()
             lastImg.url = imgList[i][1]
-            await fm.writeString(path, JSON.stringify(lasting))
+            await fm.writeString(path, JSON.stringify(lastImg))
           }
         } 
         // image from web as there's no last image (might be after 1st run)
