@@ -23,3 +23,4 @@ Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die 
 ### ChangeLog
 - 2020-12-26 initial version
 - 2020-12-26 ADD: optimized caching  of image
+- 2021-01-08 FIX: don't show pictures older than 24 hours.
