@@ -176,6 +176,8 @@ async function createWidget(items) {
   let title_txt = inner_footer.addText("Herkules - " + timeStr)  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
+//   title_txt.shadowRadius = 1
+//   title_txt.shadowColor = Color.black()
   inner_footer.addSpacer()  
   if ( config.widgetFamily == 'small') { inner_footer = footer.addStack() }  // 2 rows in small widget
 
@@ -183,11 +185,16 @@ async function createWidget(items) {
   title_txt = inner_footer.addText(" " + dfTime.string(riseDate) + "  " )  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
+//   title_txt.shadowRadius = 1
+//   title_txt.shadowColor = Color.black()
+
 
   printSFSymbol(inner_footer, "sunset", 12)
   title_txt = inner_footer.addText(" " + dfTime.string(sunsetDate))  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
+//   title_txt.shadowRadius = 1
+//   title_txt.shadowColor = Color.black()
   
   return list
 }
@@ -310,6 +317,11 @@ function getImgURL(page) {
     }
 	  
   } while (found_pic == true)
+
+  // only store the last 20 pictures to make sure not having pictures from the day before yesterday
+  do {
+    imgList.shift()
+  } while (imgList.length > 20)
 
   // sort by descanding date
   imgList = imgList.sort(sortImgListDesc)
