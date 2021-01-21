@@ -210,8 +210,8 @@ async function createWidget(items) {
   let title_txt = inner_footer.addText(webCam[0].label + " - " + timeStr)  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
-//   title_txt.shadowRadius = 1
-//   title_txt.shadowColor = Color.black()
+  title_txt.shadowRadius = 1
+  title_txt.shadowColor = Color.black()
   inner_footer.addSpacer()  
   if ( config.widgetFamily == 'small') { inner_footer = footer.addStack() }  // 2 rows in small widget
 
@@ -219,16 +219,16 @@ async function createWidget(items) {
   title_txt = inner_footer.addText(" " + dfTime.string(riseDate) + "  " )  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
-//   title_txt.shadowRadius = 1
-//   title_txt.shadowColor = Color.black()
+  title_txt.shadowRadius = 1
+  title_txt.shadowColor = Color.black()
 
 
   printSFSymbol(inner_footer, "sunset", 12)
   title_txt = inner_footer.addText(" " + dfTime.string(sunsetDate))  
   title_txt.textColor = Color.white()  
   title_txt.font = Font.mediumMonospacedSystemFont(12)
-//   title_txt.shadowRadius = 1
-//   title_txt.shadowColor = Color.black()
+  title_txt.shadowRadius = 1
+  title_txt.shadowColor = Color.black()
   
   return list
 }
