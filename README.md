@@ -33,7 +33,7 @@ Der Name wird einfach als Widget-Parameter übergeben.
 
 
 ### Tipps
-Nur für Frankfurt werden auch die Nachtbilder angezeigt. Bei allen anderern WebCams sind die Nachtbilder eher hässlich.
+Nur für Frankfurt werden auch die Nachtbilder angezeigt. Bei allen anderen WebCams sind die Nachtbilder eher hässlich.
 Das kann im Code geändert werden. 
 
 
