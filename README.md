@@ -9,6 +9,7 @@ z.B.: https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkul
 
 ![](KSHerkulesWebCamSmall.jpg) 
 ![](KSHerkulesWebCamMedium.jpg)
+![](FrankfurtWebCamMedium.jpg)
 
 ### Konfiguration
 Ohne Konfiguration wird die WebCam des Herkules ausgewählt. 
