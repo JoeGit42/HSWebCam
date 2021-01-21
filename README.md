@@ -1,6 +1,6 @@
-# KSHerkulesWebCam
+# HSWebCam
 Zeigt das aktuellste Bild der Webcam der Hessenschau
-https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkules-100.html
+z.B.: https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkules-100.html
 
 
 ### Features
@@ -11,10 +11,29 @@ https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkules-100
 ![](KSHerkulesWebCamMedium.jpg)
 
 ### Konfiguration
-Das Widget benötigt keine Konfiguration
+Ohne Konfiguration wird die WebCam des Herkules ausgewählt. 
+Es können folgende WebCams ausgewähl, die von der Hessenschau angeboten werden:
+- herkules
+- karlshafen
+- bsa
+- darmstadt
+- dillenburg
+- frankfurt
+- fulda
+- marburg
+- ruedesheim
+- edersee
+- wasserkuppe
+- wiesbaden
+- willingen
+
+Der Name wird einfach als Widget-Parameter übergeben.
+![](config.jpg)
+
 
 ### Tipps
-Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die Variable onlyDaylightPics = false gesetzt werden.
+Nur für Frankfurt werden auch die Nachtbilder angezeigt. Bei allen anderern WebCams sind die Nachtbilder eher hässlich.
+Das kann im Code geändert werden. 
 
 
 ### Known Bugs
@@ -24,3 +43,4 @@ Sollen die (hässlichen) Nachtbilder auch angezeigt werden, so kann im Code die 
 - 2020-12-26 initial version
 - 2020-12-26 ADD: optimized caching  of image
 - 2021-01-08 FIX: don't show pictures older than 24 hours.
+- 2021-01-21 ADD: support of all Hessenschau WebCams
