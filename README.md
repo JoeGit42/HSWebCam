@@ -12,7 +12,7 @@ z.B.: https://www.hessenschau.de/wetter/wetterkameras/wetterkamera-kassel-herkul
 
 ### Konfiguration
 Ohne Konfiguration wird die WebCam des Herkules ausgewählt. 
-Es können folgende WebCams ausgewähl, die von der Hessenschau angeboten werden:
+Alternativ können folgende WebCams ausgewählt werden:
 - herkules
 - karlshafen
 - bsa
