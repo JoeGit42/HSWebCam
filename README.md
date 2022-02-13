@@ -45,3 +45,4 @@ Das kann im Code geändert werden.
 - 2020-12-26 ADD: optimized caching  of image
 - 2021-01-08 FIX: don't show pictures older than 24 hours.
 - 2021-01-21 ADD: support of all Hessenschau WebCams
+- 2022-02-13 FIX: adjusted search-string caused by changed website
