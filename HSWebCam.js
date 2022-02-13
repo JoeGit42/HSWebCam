@@ -330,7 +330,7 @@ function getImgURL(page) {
   // put all webcam-pics in the list
   do {
     // goto next image
-    searchString = "data-hr-time="
+    searchString = "data-prop-time=\""
     posID = webpagePart.indexOf(searchString)
     if (posID > 0) {
       webpagePart = webpagePart.substring(posID + searchString.length)
